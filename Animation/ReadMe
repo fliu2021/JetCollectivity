@@ -1,0 +1,28 @@
+###Feng Liu 
+###University of Science and Technology of China
+###lf2021@mail.ustc.edu.cn
+This code aims to illustrate how a energetic proton-proton collision event looks like at parton level.Creating a animation may give 
+hits on the so called "Jet Collectivity"
+To start it,you need to install fastjet3 and pythia8 . If not , see "Instruction on setting up".
+
+###### 
+How to use the code ? 
+1.type "cd pythia_parton_integrate_final"
+2.ttype "make" , remember to modify makefile ,so that g++ can locate pythia8 and fastjet3 .
+3.if step 2 goes lucky, then type "nohup ./mymain06" .Wait for a few minutes .
+4.After step 3 , you will get two outfile , which will be used to generate animation.
+    type "mv animation_xyz.dat ../make_animation" 
+    typr "mv animation_Jetxy.dat ../make_animation"
+5.type "cd ../make_animation"
+6.type"mkdir store_xyz" 
+      "mkdir store_xy"
+      "mkdir store_xeta" 
+      "mkdir store_Jetxy" 
+      "mkdir store_Jetxeta" 
+7.Here comes the final step:
+      type"python make_png.py" then "python ani_xyz.py"
+      type"python makexeta_png.py" then "python ani_lab_xeta.py"
+      type"python makexy_png.py" then "python ani_lab_xy.py"
+      type"python makeJETxeta_png.py" then "python ani_Jet_xeta.py"
+      type"python makeJETxy_png.py" then "python ani_Jet_xy.py"
+                      
