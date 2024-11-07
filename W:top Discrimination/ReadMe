@@ -1,0 +1,22 @@
+###Feng Liu
+###University of Science and Technology of China
+##lf2021@mail.ustc.edu.cn
+
+This code aims to discriminate jets initiated by a W or top quarks. There two ways to achieve that.
+First is that using softdrop , and see jet mass afer applying softdrop .
+1.cd SoftDropMass 
+2.make 
+3./new_default_data_vn
+
+
+Second is that using N-subjettiness ,and see tau3/tau2 , tau2/tau1
+1.cd N_subjettiness 
+2.make 
+3./new_default_data_vn
+
+
+
+
+***********REMEMBER*******************
+Make you have install pythia8 and fastjet3.and modify makefile to let g++ locate them
+Also remember to modify input rootfile address and output rootfile address.
