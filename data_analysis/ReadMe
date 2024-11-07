@@ -1,0 +1,17 @@
+###Feng Liu 
+###University of Science and Technology of China
+###lf2021@mail.ustc.edu.cn
+This code aims for data analysis 
+Type:
+
+make 
+./new_default_data_vn
+
+
+Also remember to modify makefile to makesure g++ can locate fastjet3 and pythia8.
+
+Besides, there is parameter named " mode " 
+You can change this to apply cut on Zg Rg or Zg(Thetag)^beta
+mode=1 : cut on Zg 
+mode=2 : cut on Rg
+mode=3 : cut on Zg(thetag)^beta
