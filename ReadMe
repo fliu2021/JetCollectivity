@@ -1,1 +1,57 @@
+###Feng Liu USTC
+##lf2021@mail.ustc.edu.cn
+
+****************************************************Before running the code*******************************************
+Since pythia8 and fastjet3 are required to complile the code , plesse make sure they are set up and are acciessible.
+Here are some key points on how to set them up.
+
+make a directpry where you would like to download necessary software packages : mkdir /home/somebody/Download
+
+1.FASTJET3 and FASTJET-contrib
+Download FASTJET3        : https://fastjet.fr/quickstart.html 
+DownLoad FASTJET-contrib : https://fastjet.hepforge.org/contrib/
+
+2.Pythia8
+Downlaod Pythia8         : https://pythia.org/releases/
+
+3.ROOT (if required)
+Download                 : https://root.cern/install/
+
+The procedure on above websits is quite detailed.Please follow them to successfuly install necessary software.
+
+If you have any problems, feel free to contact me by email.
+************************************************************************************************************************
+                                                What can this code set do ? 
+1.Animation:
+  Visualization of proton-proton collisions that occur at LHC with sqrt(s)=13TeV.
+  It illustrates how a jet is developed at parton level.
+  You will see a collision at lab frame and jet frame.
+  For lab frame, the collision is presented at xyz hyperplane inlaid within (3+1)spacetime , xy plane and x-eta_s plane.All the partons involved in the collision appear.
+  For jet frame, a jet cone with R=0.8 is defined and only partons that are within the jet cone will be presented.This definition of jet cone is not as strict as that in jet  algorithm, but should be effective enough.
+  This code can be modified to study eccentricity and ideas presented at Google Doc 
+2.data_analysis
+  Aim to study jet subtructure defined by SoftDrop and jet substructure dependence of collective flow.It has been modified to be able to run on cluster.
+  There is parameter named "mode" in main function.You can change it to achieve different cut on jet substructure.
+          mode=1: cut on Zg
+          mode=2: cut on Rg
+          mode=3: cut on Zg(Rg/R)^{beta}
+  Other valuse will result in error. "mode=3" is encouraged.
+  ---------------------------------------------------------
+  Plot_Tool:You can use  "make_bkg.C" to make background for high Nch jets and use "plot_substructure.C" to plot substructure distribution(Zg,Rg,Zg(Rg/R)^{beta} )
+3.SubJetAnalyzer
+  This code is advanced version.You can have a full control over particles belonging to subjet1 ,subjet2 and particles groomed by SoftDrop.
+4.W:top Discrimination
+  SoftDropMass   : to plot jet mass distribution after applied softdrop. 
+  N-subjettiness : to plot tau_3/tau_2 and tau_2/tau_1.
+  Both softjetmass and N-subjettiness can be used to tag jet and discriminate jets initiated by a parton or a gauge boson.
+*************************************************************************************************************************
+                                                Before you compile the code 
+Modify makefile to let g++ locate fastjet and pythia. Sometimes you also need to modify address of input rootfile and output rootfile.
+  
+
+
+
+
+
+
 
