@@ -48,6 +48,27 @@ If you have any problems, feel free to contact me by email.
                                                 Before you compile the code 
 Modify makefile to let g++ locate fastjet and pythia. Sometimes you also need to modify address of input rootfile and output rootfile.
   
+**************************************************************************************************************************
+                                                  Some information about SoftDrop
+SoftDrop theory: https://arxiv.org/abs/1402.2657
+
+Jet  develops from a single parton ( QCD jet ) or W/Z/Higgs/top  caused by hard process with large tranverse momentum transfer, and can be predicted by perturbative theory.
+SoftDrop is grooming tool to remove soft, wide-angle (for beta>=0) particles ,which are probably contamination or connected to non-perturbative effects.
+
+                                              -----How does softdrop work ?-----
+You can find details in SoftDrop theory. It can be summarized into only two steps: 
+1.Recluster with C/A algorithm, with closest(distance is defined in y-phi plane) pairs clustered first.
+2.Decluster , checking softDrop condition for each step.
+
+
+        SoftDrop condition : min(P_{T1} , P_{T2}) / (P_{T1}+P_{T2}) > Z_{cut} ( R/R0)^{beta}
+There are two parameters appearing in SoftDrop theory: z_{cut } and beta. 
+        z_{cut}: usually is set to be z_{cut}=0.1. It controls the smallest ratio of Pt that sub-leading subjet can share.
+        beta   : it controls how aggressive softdrop is . Smaller(but > 0 ) beta is , more aggressive(means softdrop condition is more strict and more particles would be dropped) softdrop is. 
+For the purpose of studying collective flow developed by a sinle parton, beta=0,1,2 has been investigated.
+
+
+
 
 
 
